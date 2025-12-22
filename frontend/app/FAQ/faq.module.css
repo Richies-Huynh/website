@@ -19,7 +19,7 @@
 
 .accordionCard {
   width: 100%;
-  max-width: 42rem; 
+  max-width: 42rem;
   border: 1px solid color-mix(in srgb, var(--primary), transparent 50%);
   border-radius: 0.75rem;
   overflow: hidden;

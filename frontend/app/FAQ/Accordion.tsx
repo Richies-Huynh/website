@@ -35,7 +35,7 @@ export default function Accordion({ questions, allowMultiple}: AccordionArgs) {
   return (
     // <div className="w-full max-w-2xl border border-[var(--primary)]/50 rounded-xl overflow-hidden">
     <div className={styles.accordionCard}>
-      
+
       <div className="text-4xl text-center text-[var(--primary)] border-b border-[var(--primary)]/25 font-bold p-6">
         Frequently Asked Questions
       </div>
@@ -46,7 +46,7 @@ export default function Accordion({ questions, allowMultiple}: AccordionArgs) {
 
         return (
           <div key={index} className="border-b border-[var(--primary)]/25">
-            
+
             <button
               onClick={() => handleToggle(index)}
               className="flex items-center w-full text-left hover:bg-[var(--primary)]/10 p-4"

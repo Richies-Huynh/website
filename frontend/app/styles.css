@@ -1,0 +1,82 @@
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  align-items: center;
+
+  background-image: radial-gradient(
+    1000px circle at center,
+    #121639 0%,
+    #000000 100%,
+    #1c1f45 100%
+  );
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* HERO TITLE COLUMN */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  max-width: 420px;
+  padding-left: 2.5rem; /* pl-10 */
+}
+
+/* REBELHACKS TITLE STACK */
+.rebelhacks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* MAIN HEADINGS */
+.rebel,
+.hacks {
+  font-weight: 700;
+  font-size: 72px;
+  color: #df4c21;
+  margin: 0;
+  -webkit-text-stroke: 2px #fea70a;
+}
+
+.hacks {
+  margin-top: -2rem; /* -mt-8 */
+}
+
+.unlv {
+  font-weight: 700;
+  font-size: 72px;
+  color: #007083;
+  margin: 0;
+  margin-top: -1rem; /* -mt-4 */
+  -webkit-text-stroke: 2px #b0f2fe;
+}
+
+/* DESCRIPTION TEXT */
+.hero-description {
+  font-weight: 600;
+  color: #e99806;
+}
+
+/* DATE TEXT */
+.hero-date {
+  font-size: 20px;
+  font-weight: 400;
+  color: #00d0f3;
+}
+
+/* IMAGE WRAPPER */
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE */
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 580px;
+  object-fit: contain;
+}

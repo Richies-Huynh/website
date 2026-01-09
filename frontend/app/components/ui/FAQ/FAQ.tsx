@@ -35,7 +35,6 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
   };
 
   return (
-    // <div className="w-full max-w-2xl border border-[var(--primary)]/50 rounded-xl overflow-hidden">
     <div className={styles.accordionCard}>
       <div className={styles.accordionHeader}>Frequently Asked Questions</div>
 

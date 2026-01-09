@@ -38,12 +38,6 @@ export default function Home() {
               <a id="about-link" href="#about">
                 About
               </a>
-              {/* <a
-            href="#sponsor"
-            className="no-underline text-[0.95rem] text-white hover:opacity-80"
-          >
-            Sponsor Us!
-          </a> */}
 
               <button id="login">
                 <Link href="#">Login</Link>
@@ -55,19 +49,6 @@ export default function Home() {
                 <Link href="#">Register</Link>
               </button>
             </nav>
-            {/* <div
-              id="social"
-              className="flex gap-4 absolute right-12 top-1/2 -translate-y-1/2"
-            >
-              <button className="border-0 text-[1.2rem] text-white cursor-pointer bg-transparent">
-                <Image
-                  src="/images/discord-white-icon.png"
-                  alt="Discord"
-                  width={36}
-                  height={26}
-                />
-              </button>
-            </div> */}
           </header>
 
           <div className="hero-title">

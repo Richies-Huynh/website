@@ -14,7 +14,7 @@
 /* Global setup for font adjustments */
 .title-org,
 .title-school-text {
-  line-height: 1.1; /* or 1.15 if you want more air */
+  line-height: 1.1; 
   margin: 0;
   font-size: var(--step-4);
   font-weight: 700;

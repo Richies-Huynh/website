@@ -143,10 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="about"
-        className="flex min-h-screen items-start justify-center bg-background p-4"
-      >
+      <section id="about">
         <FAQ questions={faqQuestions} allowMultiple={true} />
       </section>
     </main>

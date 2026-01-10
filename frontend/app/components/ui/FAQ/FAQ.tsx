@@ -35,50 +35,52 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
   };
 
   return (
-    <div className={styles.accordionCard}>
+    <div className={styles.faqWrapper}>
       <div className={styles.accordionHeader}>Frequently Asked Questions</div>
 
-      {questions.map((faqQuestion, index) => {
-        // Explicitly typed boolean check
-        const isOpen: boolean = openIndices.includes(index);
+      <div className={styles.accordionCard}>
+        {questions.map((faqQuestion, index) => {
+          // Explicitly typed boolean check
+          const isOpen: boolean = openIndices.includes(index);
 
-        return (
-          <div key={index} className={styles.accordionItem}>
-            <button
-              onClick={() => handleToggle(index)}
-              className={styles.accordionButton}
-            >
-              <div className={styles.accordionQuestion}>
-                {faqQuestion.question}
-              </div>
+          return (
+            <div key={index} className={styles.accordionItem}>
+              <button
+                onClick={() => handleToggle(index)}
+                className={styles.accordionButton}
+              >
+                <div className={styles.accordionQuestion}>
+                  {faqQuestion.question}
+                </div>
 
-              <div className="w-4 h-4">
-                {isOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`${styles.chevronIcon} ${
-                      isOpen ? styles.chevronOpen : ""
-                    }`}
-                    viewBox="0 0 512 512"
-                  >
-                    <path d="M112 328l144-144 144 144" />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={styles.chevronIcon}
-                    viewBox="0 0 512 512"
-                  >
-                    <path d="M112 184l144 144 144-144" />
-                  </svg>
-                )}
-              </div>
-            </button>
+                <div className="w-4 h-4">
+                  {isOpen ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${styles.chevronIcon} ${
+                        isOpen ? styles.chevronOpen : ""
+                      }`}
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M112 328l144-144 144 144" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={styles.chevronIcon}
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M112 184l144 144 144-144" />
+                    </svg>
+                  )}
+                </div>
+              </button>
 
-            {isOpen && <p className="p-4 pt-0">{faqQuestion.answer}</p>}
-          </div>
-        );
-      })}
+              {isOpen && <p className="p-4 pt-0">{faqQuestion.answer}</p>}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

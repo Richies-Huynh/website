@@ -49,26 +49,26 @@
   background-color: #121639;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
-}
 
-.nav a {
-  font-size: 0.95rem;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1.15px;
-}
+  a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.15px;
+  }
 
-.nav a:hover {
-  opacity: 0.8;
-}
-
-.registerBtn {
-  padding: 0.5rem 1.5rem;
-  background-color: #fea70a;
-  border-radius: 0.75rem;
-  color: #ffffff;
-  font-weight: 600;
-  cursor: pointer;
+  a:hover {
+    opacity: 0.8;
+  }
+  
+  .registerBtn {
+    padding: 0.5rem 1.5rem;
+    background-color: #fea70a;
+    border-radius: 0.75rem;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+  }
 }
 
 /* Hero Left Wrapper*/
@@ -215,7 +215,7 @@
       "description OrangeDiamond"
       "date OrangeDiamond"
       "BlueAce BlueAce";
-      margin-bottom: 20%;
+    margin-bottom: 20%;
   }
 
   .heroDescription {

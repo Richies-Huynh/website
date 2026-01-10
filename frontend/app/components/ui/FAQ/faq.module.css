@@ -7,6 +7,16 @@
   box-shadow: 0 0 10px var(--primary);
 }
 
+.faqWrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 1rem;
+}
+
 .accordionHeader {
   font-size: var(--step-1);
   font-weight: bold;

@@ -92,7 +92,7 @@ export default function Home() {
             <Image
               src="/images/red-diamond.svg"
               alt="red diamond"
-              width={100}
+              width={120}
               height={40}
               className={styles.redDiamond}
             />

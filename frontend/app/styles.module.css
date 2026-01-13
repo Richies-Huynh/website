@@ -49,7 +49,8 @@
   background-color: #121639;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
-
+  color: white;
+  
   a {
     font-size: 0.95rem;
     text-decoration: none;
@@ -81,7 +82,7 @@
   flex-direction: column;
 
   gap: 0.25em;
-  height: auto;
+  min-height: 100vh;
   padding-top: 5%;
 }
 
@@ -90,7 +91,7 @@
   grid-area: right;
   justify-self: center;
   max-width: 100%;
-  height: auto;
+  min-height: auto;
 }
 
 /* TITLES */
@@ -215,7 +216,7 @@
       "description OrangeDiamond"
       "date OrangeDiamond"
       "BlueAce BlueAce";
-    margin-bottom: 20%;
+    margin-bottom: 10%;
   }
 
   .heroDescription {

@@ -1,24 +1,16 @@
-:root {
-  --primary: #fea70a;
-  --background: #111435;
-}
-
-.shadow-border {
-  box-shadow: 0 0 10px var(--primary);
-}
-
-.faqWrapper{
+.faqWrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 50vh;
   align-items: center;
   justify-content: center;
-  
   padding: 1rem;
+
+ 
 }
 
 .accordionHeader {
-  font-size: var(--step-1);
+  font-size: var(--step-0);
   font-weight: bold;
   text-align: center;
   color: var(--primary);
@@ -31,29 +23,28 @@
   overflow: hidden;
 }
 
-.accordionItem {
-  border: 2px solid red;
-}
-
 .accordionButton {
   display: flex;
   align-items: center;
   width: 100%;
   text-align: left;
   padding: 1rem; /* p-4 */
-  background: none;
   cursor: pointer;
   transition: background 0.2s ease;
-}
-
-.accordionButton:hover {
-  background-color: color-mix(in srgb, var(--primary), transparent 10%);
 }
 
 .accordionQuestion {
   flex: 1;
   font-weight: bold;
   color: var(--primary);
+}
+
+.accordionAnswer {
+  padding: 1rem;
+  padding-top: 0;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .chevronWrapper {
@@ -76,12 +67,4 @@
 
 .chevronOpen {
   transform: rotate(180deg);
-}
-
-.accordionAnswer {
-  padding: 1rem; /* p-4 */
-  padding-top: 0;
-  color: white;
-  font-size: 1rem;
-  line-height: 1.5rem;
 }

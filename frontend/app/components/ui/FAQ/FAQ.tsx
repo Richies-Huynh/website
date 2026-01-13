@@ -44,7 +44,7 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
           const isOpen: boolean = openIndices.includes(index);
 
           return (
-            <div key={index} className={styles.accordionItem}>
+            <div key={index}>
               <button
                 onClick={() => handleToggle(index)}
                 className={styles.accordionButton}
@@ -53,7 +53,7 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
                   {faqQuestion.question}
                 </div>
 
-                <div className="w-4 h-4">
+                <div className={styles.chevronWrapper}>
                   {isOpen ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,9 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
                 </div>
               </button>
 
-              {isOpen && <p className="p-4 pt-0">{faqQuestion.answer}</p>}
+              {isOpen && (
+                <p className={styles.accordionAnswer}>{faqQuestion.answer}</p>
+              )}
             </div>
           );
         })}

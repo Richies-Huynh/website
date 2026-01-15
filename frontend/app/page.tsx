@@ -4,12 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { useState } from "react";
-
 import styles from "./styles.module.css";
-
-// import Header from "./components/ui/Header";
 import FAQ from "./components/ui/faq/Faq";
 import About from "./components/ui/about/About";
+import Footer from "./components/ui/footer/Footer";
 
 interface Question {
   question: string;
@@ -164,6 +162,8 @@ export default function Home() {
       <section id="faq">
         <FAQ questions={faqQuestions} allowMultiple={true} />
       </section>
+
+      <Footer />
     </main>
   );
 }

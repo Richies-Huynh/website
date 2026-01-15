@@ -36,20 +36,20 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
 
   return (
     <div className={styles.faqWrapper}>
-      <div className={styles.accordionHeader}>Frequently Asked Questions</div>
+      <div className={styles.faqHeader}>Frequently Asked Questions</div>
 
-      <div className={styles.accordionCard}>
+      <div className={styles.accordionCardWrapper}>
         {questions.map((faqQuestion, index) => {
           // Explicitly typed boolean check
           const isOpen: boolean = openIndices.includes(index);
 
           return (
-            <div key={index} className={styles.accordionItem}>
+            <div key={index} className={styles.accordionCard}>
               <button
                 onClick={() => handleToggle(index)}
-                className={styles.accordionButton}
+                className={styles.button}
               >
-                <div className={styles.accordionQuestion}>
+                <div className={styles.question}>
                   {faqQuestion.question}
                 </div>
 
@@ -77,7 +77,7 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
               </button>
 
               {isOpen && (
-                <p className={styles.accordionAnswer}>{faqQuestion.answer}</p>
+                <p className={styles.answer}>{faqQuestion.answer}</p>
               )}
             </div>
           );

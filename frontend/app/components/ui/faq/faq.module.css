@@ -8,15 +8,15 @@
   background: transparent;
 }
 
-.accordionHeader {
+.faqHeader {
   font-size: var(--step-0);
   font-weight: 700;
 
-  color: var(--primary);
+  color: var(--sub-header);
   margin-bottom: 2rem;
 }
 
-.accordionCard {
+.accordionCardWrapper {
   width: 100%;
   max-width: 42rem;
   display: flex;
@@ -24,23 +24,23 @@
   gap: 1rem;
 }
 
-.accordionItem {
+.accordionCard {
   background: linear-gradient(
     135deg,
     rgba(18, 22, 57, 0.9),
     rgba(8, 8, 8, 0.9)
   );
-  border-radius: 1rem;
 
+  border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  .accordionCard:hover {
+    box-shadow: 0 0 10px rgba(254, 167, 10, 0.3);
+  }
 }
 
-.accordionItem:hover {
-  box-shadow: 0 0 10px rgba(254, 167, 10, 0.3);
-}
-
-.accordionButton {
+.button {
   display: flex;
   align-items: center;
   width: 100%;
@@ -48,19 +48,17 @@
   padding: 1rem 1.5rem;
   cursor: pointer;
 
-  border: none;
-  outline: none;
   transition: background 0.2s ease;
 }
 
-.accordionQuestion {
+.question {
   flex: 1;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--primary);
+  font-size: var(--step--2);
+  color: var(--sub-text);
 }
 
-.accordionAnswer {
+.answer {
   padding: 0 1.5rem 1rem 1.5rem;
   color: #f5f5f5;
   font-size: 1rem;
@@ -76,20 +74,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.chevronIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  stroke-width: 48;
-  stroke: var(--primary);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out;
-}
+  .chevronIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 48;
+    stroke: var(--primary);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
 
-.chevronOpen {
-  transform: rotate(180deg);
+    .chevronOpen {
+      transform: rotate(180deg);
+    }
+  }
 }

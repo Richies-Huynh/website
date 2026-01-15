@@ -1,4 +1,4 @@
-.aboutWrapper {
+.about {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -6,18 +6,26 @@
   justify-content: center;
   padding: 1rem;
   background-color: #080808;
+
+  /* background-image: radial-gradient(
+    circle at bottom left,
+    #111435 0%,
+    transparent 50%
+  ); */
 }
-.introWrapper {
- 
+.intro {
+  min-height: 50vh;
+  h1 {
+    color: #ffffff;
+  }
+  p {
+    color: #e0e0e0;
+    
+  }
 }
 
 .tracks {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  gap: 2rem; /* space between the two cards */
-  flex-wrap: wrap; /* allows wrapping on mobile */
-  margin-top: 2rem;
-  
+  min-height: 50vh;
 }
 
 .trackCS,

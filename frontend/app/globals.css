@@ -2,12 +2,12 @@
 
 :root {
   scroll-behavior: smooth;
+
   --foreground: #ffffff;
-
-  --primary: #fea70a;
   --background: #111435;
+  --primary: #fea70a;
 
-  /* Scaleable text font calculator (Utopia) */
+  /* Utopia scale */
   --step--2: clamp(1rem, 0.5rem + 1.0038vw, 1.2rem);
   --step--1: clamp(1.25rem, 0.9543rem + 1.3143vw, 2.4rem);
   --step-0: clamp(1.5rem, 1.1143rem + 1.7143vw, 3rem);
@@ -21,14 +21,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
+  --font-sans: var(--font-inter);
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
-

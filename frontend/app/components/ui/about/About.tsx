@@ -3,18 +3,12 @@ import styles from "./about.module.css";
 export default function About() {
   return (
     <>
-      <div className={styles.aboutWrapper}>
+      <div className={styles.about}>
         <div className={styles.intro}>
-          <h1>About Rebel Hacks</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus
-            molestias dolor autem minus, ex accusamus atque libero et beatae
-            consectetur, rem, perspiciatis ratione optio ad provident maxime
-            dolorem ut eaque. Itaque aspernatur ratione impedit temporibus
-            tempore rem, eum explicabo debitis atque ipsam ut mollitia autem
-            quam beatae eos quisquam. Veritatis aliquid odio ratione vero
-            explicabo fugiat at dolores quia facilis.
-          </p>
+          <h1>About</h1>
+          <div className={styles.card1}></div>
+          <div className={styles.card2}></div>
+          <div className={styles.card3}></div>
         </div>
         <div className={styles.tracks}>
           <div className={styles.trackCS}>

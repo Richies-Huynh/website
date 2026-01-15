@@ -18,11 +18,11 @@
     "header header"
     "left right";
 
-  background: radial-gradient(ellipse at top, transparent, #080808 65%);
+  background: radial-gradient(circle at top, transparent, #080808 65%);
 
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header {
@@ -99,25 +99,25 @@
 .titleOrg {
   color: #df4c21;
   max-width: 90%;
-  -webkit-text-stroke: 2px #fea70a;
+
 }
 .titleSchoolText {
   color: #007083;
-  -webkit-text-stroke: 2px #b0f2fe;
+ 
 }
+
 .heroDescription {
   font-size: var(--step--2);
-  font-weight: 500;
+  font-weight: 400;
   color: #e99806;
   max-width: 500px;
 }
+
 .heroDate {
   font-size: var(--step--2);
-  font-weight: 500;
+  font-weight: 400;
   color: #00d0f3;
 }
-
-
 
 @media screen {
   /* Mobile Elements (Hidden) */
@@ -193,7 +193,7 @@
   .titleSchoolText {
     grid-area: UNLV2026;
   }
-  
+
   .vegasSign {
     grid-area: VegasSign;
     grid-column: 3/1;

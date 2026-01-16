@@ -42,31 +42,31 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
 
-  .nav a:hover {
-    opacity: 0.8;
-  }
+.nav a:hover {
+  opacity: 0.8;
+}
 
-  .navLink {
-    color: white;
-  }
+.navLink {
+  color: white;
 }
 
 .buttonWrapper {
   display: flex;
   gap: 2rem;
+}
 
-  .loginBtn {
-    color: #ffffff;
-  }
+.loginBtn {
+  color: #ffffff;
+}
 
-  .registerBtn {
-    padding: 0.5rem 1.5rem;
-    background-color: #fea70a;
-    border-radius: 0.75rem;
-    color: #ffffff;
-    cursor: pointer;
-  }
+.registerBtn {
+  padding: 0.5rem 1.5rem;
+  background-color: #fea70a;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .heroTitle {
@@ -82,42 +82,40 @@
 
   gap: 0.5rem;
   max-width: 520px;
-
-  /* TITLES */
-  .titleOrg {
-    color: #ff4d5a;
-    text-shadow: 0 0 10px rgba(255, 77, 90, 0.35),
-      0 0 20px rgba(255, 77, 90, 0.2);
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    line-height: 0.95;
-  }
-
-  .titleSchoolText {
-    color: #00d0f3;
-    text-shadow: 0 0 16px rgba(0, 208, 243, 0.4);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    font-size: 70% of REBEL HACKS;
-    max-width: min-content;
-  }
-
-  .heroDescription {
-    font-size: var(--step--2);
-    font-weight: 400;
-    color: var(--sub-text);
-    max-width: 520px;
-  }
-
-  .heroDate {
-    margin-top: 2%;
-    font-size: var(--step--2);
-    font-weight: 400;
-    color: var(--sub-text);
-  }
 }
 
+/* TITLES */
+.titleOrg {
+  color: #ff4d5a;
+  text-shadow: 0 0 10px rgba(255, 77, 90, 0.35), 0 0 20px rgba(255, 77, 90, 0.2);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+
+.titleSchoolText {
+  color: #00d0f3;
+  text-shadow: 0 0 16px rgba(0, 208, 243, 0.4);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 70% of REBEL HACKS;
+  max-width: min-content;
+}
+
+.heroDescription {
+  font-size: var(--step--2);
+  font-weight: 400;
+  color: var(--sub-text);
+  max-width: 520px;
+}
+
+.heroDate {
+  margin-top: 2%;
+  font-size: var(--step--2);
+  font-weight: 400;
+  color: var(--sub-text);
+}
 /* Used on desktop */
 .heroImageWrapper {
   grid-area: right;

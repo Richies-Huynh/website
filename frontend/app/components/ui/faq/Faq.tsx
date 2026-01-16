@@ -49,36 +49,25 @@ export default function Accordion({ questions, allowMultiple }: AccordionArgs) {
                 onClick={() => handleToggle(index)}
                 className={styles.button}
               >
-                <div className={styles.question}>
-                  {faqQuestion.question}
-                </div>
+                <div className={styles.question}>{faqQuestion.question}</div>
 
                 <div className={styles.chevronWrapper}>
-                  {isOpen ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`${styles.chevronIcon} ${
-                        isOpen ? styles.chevronOpen : ""
-                      }`}
-                      viewBox="0 0 512 512"
-                    >
-                      <path d="M112 328l144-144 144 144" />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={styles.chevronIcon}
-                      viewBox="0 0 512 512"
-                    >
-                      <path d="M112 184l144 144 144-144" />
-                    </svg>
-                  )}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`${styles.chevronIcon} ${
+                      isOpen ? styles.chevronOpen : ""
+                    }`}
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M112 184l144 144 144-144" />
+                  </svg>
                 </div>
               </button>
-
-              {isOpen && (
+              <div
+                className={`${styles.answerWrap} ${isOpen ? styles.open : ""}`}
+              >
                 <p className={styles.answer}>{faqQuestion.answer}</p>
-              )}
+              </div>
             </div>
           );
         })}

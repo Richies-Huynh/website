@@ -84,6 +84,7 @@ export default function Home() {
               <Link href="#">Register</Link>
             </button>
           </div>
+          
         </header>
 
         <div className={styles.heroTitle}>

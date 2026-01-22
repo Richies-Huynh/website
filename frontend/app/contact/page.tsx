@@ -21,7 +21,7 @@ export default function Contact() {
   className={`${styles.container} min-h-screen flex flex-col items-center justify-center p-8 text-white font-sans`}
     >
         <Image
-          src="/images/aceOfSpade.png"
+          src="/images/ace.png"
           alt="Ace of Spades"
           width={200}
           height={200}

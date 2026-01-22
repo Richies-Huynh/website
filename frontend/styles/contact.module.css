@@ -22,20 +22,20 @@
 .title {
   position: relative;
   z-index: 1;
-  color: #cc5500;
+  color: #eed2bd;
   text-shadow:
-    0 0 2px #ff7f50,
-    0 0 5px #ff7f50,
-    0 0 10px #ff7f50,
-    0 0 20px #ff7f50;
+    0 0 1px #ff7f50,
+    0 0 3px #ff7f50,
+    0 0 7px #ff7f50,
+    0 0 15px #ff7f50;
 }
 
 .label {
-  color: #008b8b;
-  text-shadow:
+  color: #ffffff;
+  /* text-shadow:
     0 0 2px #00ffff,
     0 0 5px #00ffff,
-    0 0 10px #00ffff;
+    0 0 10px #00ffff; */
 }
 
 .input, .textarea {
@@ -43,7 +43,7 @@
   background-color: #0d1b2a;
   color: #fff;
   border-radius: 8px;
-  text-shadow: 0 0 2px #00ffff;
+  text-shadow: 0 0 2px #ffffff;
   transition: 0.3s;
 }
 
@@ -59,10 +59,10 @@
 
 .button {
   border: 2px solid #ff7f50;
-  color: #ff7f50;
+  color: #ffffff;
   background: transparent;
   border-radius: 8px;
-  text-shadow: 0 0 5px #ff7f50, 0 0 10px #ff7f50;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ff7f50;
   transition: 0.3s;
 }
 

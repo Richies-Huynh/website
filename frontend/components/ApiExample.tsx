@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useApi, useMutation } from '@/hooks/useApi';
-import type { HealthResponse, ItemListResponse, SubmitResponse } from '@/lib/types';
+import type {EmailResponse, HealthResponse, ItemListResponse, SubmitResponse} from '@/lib/types';
 
 /**
  * Example component demonstrating API integration with the Symfony backend
@@ -22,10 +22,44 @@ export default function ApiExample() {
   const { mutate: submitForm, loading: submitLoading, data: submitResponse } = 
     useMutation<typeof formData, SubmitResponse>('post', '/submit');
 
+  const [emailFormData, setEmailFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const {mutate: sendEmail, loading: sendEmailLoading, data: sendEmailResponse } = useMutation<typeof emailFormData, EmailResponse>('post', '/contact-email');
+  
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await sendEmail(emailFormData);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await submitForm(formData);
     setFormData({ name: '', email: '' });
+  };
+
+  // Helper function to extract error message
+  const getErrorMessage = (error: Error | null): string => {
+    if (!error) return '';
+    
+    console.log('Error details:', error); // Debug logging
+    
+    // Check if it's an Axios error with response
+    if ('response' in error && error.response) {
+      return 'Connection failed - Check if backend is running on https://127.0.0.1:8000';
+    }
+    // Check if it's a network error
+    if ('request' in error && error.request && !('response' in error)) {
+      return 'Network error - Backend not reachable';
+    }
+    // Check for CORS or SSL certificate errors
+    if (error.message.includes('Network Error') || error.message.includes('ERR_')) {
+      return 'Cannot connect to backend at https://127.0.0.1:8000 - Check CORS/SSL settings';
+    }
+    // Default error message
+    return error.message || 'Unknown error occurred';
   };
 
   return (
@@ -201,7 +235,7 @@ export default function ApiExample() {
         {healthError && (
           <span className="status-badge status-error">
             <span className="dot"></span>
-            Connection failed - Is the backend running?
+            {getErrorMessage(healthError)}
           </span>
         )}
         {health && (
@@ -222,7 +256,11 @@ export default function ApiExample() {
       <div className="section">
         <h2>📦 Items from Backend ({items?.total || 0} total)</h2>
         {itemsLoading && <p style={{ color: 'rgba(255,255,255,0.6)' }}>Loading items...</p>}
-        {itemsError && <p style={{ color: '#ef4444' }}>Failed to load items</p>}
+        {itemsError && (
+          <div className="status-badge status-error" style={{ display: 'block', marginTop: '1rem' }}>
+            {getErrorMessage(itemsError)}
+          </div>
+        )}
         {items && (
           <div className="item-grid">
             {items.items.map((item) => (
@@ -266,6 +304,64 @@ export default function ApiExample() {
           </div>
         )}
       </div>
+      {/* Email Contact Form Section */}
+      <div className="section">
+        <h2>📧 Send Contact Email</h2>
+        <form onSubmit={handleEmailSubmit}>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={emailFormData.name}
+            onChange={(e) => setEmailFormData(prev => ({ ...prev, name: e.target.value }))}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            value={emailFormData.email}
+            onChange={(e) => setEmailFormData(prev => ({ ...prev, email: e.target.value }))}
+            required
+          />
+          <textarea
+            placeholder="Your message"
+            value={emailFormData.message}
+            onChange={(e) => setEmailFormData(prev => ({ ...prev, message: e.target.value }))}
+            required
+            style={{
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              background: 'rgba(255, 255, 255, 0.05)',
+              color: '#fff',
+              fontSize: '1rem',
+              minHeight: '100px',
+              resize: 'vertical',
+              fontFamily: 'inherit'
+            }}
+          />
+          <button type="submit" disabled={sendEmailLoading}>
+            {sendEmailLoading ? 'Sending...' : 'Send Email'}
+          </button>
+        </form>
+        {sendEmailResponse?.success && (
+          <div className="success-message">
+            ✓ {sendEmailResponse.message}
+          </div>
+        )}
+        {sendEmailResponse?.error && (
+          <div style={{
+            padding: '1rem',
+            borderRadius: '8px',
+            background: 'rgba(239, 68, 68, 0.15)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            color: '#ef4444',
+            marginTop: '1rem'
+          }}>
+            ✗ {sendEmailResponse.error}
+          </div>
+        )}
+      </div>
+
     </div>
   );
 }

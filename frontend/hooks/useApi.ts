@@ -23,7 +23,32 @@ export function useApi<T>(endpoint: string, immediate = true): UseApiResult<T> {
     error: null,
   });
 
-  const fetchData = useCallback(async () => {
+  useEffect(() => {
+    if (!immediate) return;
+
+    let cancelled = false;
+
+    // Async function to fetch data
+    (async () => {
+      try {
+        const data = await api.get<T>(endpoint);
+        if (!cancelled) {
+          setState({ data, loading: false, error: null });
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setState({ data: null, loading: false, error: error as Error });
+        }
+      }
+    })();
+
+    // Cleanup function to prevent state updates if component unmounts
+    return () => {
+      cancelled = true;
+    };
+  }, [endpoint, immediate]);
+
+  const refetch = useCallback(async () => {
     setState(prev => ({ ...prev, loading: true, error: null }));
     
     try {
@@ -34,15 +59,9 @@ export function useApi<T>(endpoint: string, immediate = true): UseApiResult<T> {
     }
   }, [endpoint]);
 
-  useEffect(() => {
-    if (immediate) {
-      fetchData();
-    }
-  }, [fetchData, immediate]);
-
   return {
     ...state,
-    refetch: fetchData,
+    refetch,
   };
 }
 
@@ -63,7 +82,12 @@ export function useMutation<TData, TResponse>(
     setState(prev => ({ ...prev, loading: true, error: null }));
     
     try {
-      const response = await api[method]<TResponse>(endpoint, data);
+      let response: TResponse;
+      if (method === 'delete') {
+        response = await api.delete<TResponse>(endpoint);
+      } else {
+        response = await api[method]<TResponse>(endpoint, data);
+      }
       setState({ data: response, loading: false, error: null });
       return response;
     } catch (error) {
@@ -74,7 +98,7 @@ export function useMutation<TData, TResponse>(
 
   return {
     ...state,
-    mutate,
+    mutate: mutate,
   };
 }
 

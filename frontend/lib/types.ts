@@ -32,6 +32,13 @@ export interface SubmitResponse {
   error?: string;
 }
 
+export interface EmailResponse {
+  success: boolean;
+  message: string;
+  data?: Record<string, unknown>;
+  error?: string;
+}
+
 // API Error response
 export interface ApiError {
   success: false;

@@ -1,0 +1,117 @@
+.tracksHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tracksTitle {
+  color: var(--sub-header);
+  font-size: var(--step-3);
+  text-shadow: 0 0 16px rgba(0, 208, 243, 0.35);
+}
+
+.tracksSubtitle {
+  max-width: 720px;
+  margin: 0.75rem auto 1.5rem;
+  color: white;
+  font-size: var(--step--1);
+}
+
+.tracksContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 0 1.5rem ;
+}
+
+/* Overall stacking */
+.tracksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Beginner + Advanced row */
+.trackUpper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Individual track cards */
+.trackCard {
+  background: rgba(15, 15, 30, 0.85);
+  border-radius: 18px;
+  padding: 1rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+/* Track titles */
+.cardTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.cardTitleText {
+  color: var(--card-header);
+  font-size: var(--step-0);
+}
+
+.lineBreak {
+  color: var(--primary);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+/* Track descriptions */
+.cardDesc {
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  color: var(--sub-text);
+  font-size: var(--step--1);
+}
+
+.cardTitleIcon {
+  width: 48px;
+  height: 48px;
+  fill: var(--primary);
+}
+
+/* Grand Track wrapper */
+.trackLower {
+  display: flex;
+  justify-content: center;
+}
+
+/* Grand Track card itself */
+.trackLower .trackCard {
+  max-width: 720px; /* controls how narrow it is */
+  width: 100%;
+}
+.trackLower .lineBreak {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .trackUpper {
+    grid-template-columns: 1fr;
+  }
+
+  .lineBreak {
+    width: 100%;
+  }
+  .cardDesc {
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-left: 0;
+  }
+}

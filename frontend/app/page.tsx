@@ -19,23 +19,31 @@ const faqQuestions: Question[] = [
   {
     question: "What is a hackathon?",
     answer:
-      "A hackathon is an event where individuals come together to collaborate on software or hardware projects within a set time frame.",
+      "A hackathon is an event where teams come together to collaborate on software or hardware projects within a set time frame to be formally judged.",
   },
   {
     question: "Is there a theme?",
     answer:
-      "Yes, each hackathon may have a specific theme or focus area, such as healthcare, education, or sustainability.",
+      "Yes, the theme will be released on-site after the opening ceremony",
   },
   {
-    question: "How many people can be in a group?",
+    question: "How many people can be in a team?",
     answer:
-      "Group sizes can vary, but typically teams consist of 2 to 5 members.",
+      "Teams will range from 1 - 5 people",
   },
   {
     question: "Who can join?",
     answer:
       "Any UNLV and CSN student enrolled during the spring semester can attend. All majors are welcome.",
   },
+  {
+    question: "Will there be food?",
+    answer: "Yes! We will be serving breakfast, lunch, and dinner for free. We will also provide caffeinated drinks"
+  },
+  {
+    question: "How much does it cost to join?",
+    answer: "RebelHacks is 100% free to join"
+  }
 ];
 
 export default function Home() {

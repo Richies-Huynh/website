@@ -67,11 +67,11 @@ export default function Home() {
           </nav>
           <div className={styles.buttonWrapper}>
             <button className={styles.loginBtn}>
-              <Link href="#">Login</Link>
+              <Link href="https://portal.rebelhacks.com">Login</Link>
             </button>
 
             <button className={styles.registerBtn}>
-              <Link href="#">Register</Link>
+              <Link href="https://portal.rebelhacks.com/register">Register</Link>
             </button>
           </div>
         </header>
